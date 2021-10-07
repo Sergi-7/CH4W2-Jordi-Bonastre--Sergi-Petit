@@ -16,6 +16,13 @@ class SkylabArray {
     }
     return flag;
   }
+  find(func) {
+    for (var element in this.group) {
+      if (func(this.group[element])) {
+        return this.group[element];
+      }
+    }
+  }
 }
 module.exports = SkylabArray;
 
