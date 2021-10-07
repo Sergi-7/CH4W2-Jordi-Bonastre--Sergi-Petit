@@ -8,12 +8,15 @@ class SkylabArray {
     return this.group;
   }
   some(func) {
-    for (value in this.group) {
-      if (!func(value)) {
-        return false;
+    let flag = false;
+    for (var element in this.group) {
+      if (func(this.group[element])) {
+        flag = true;
       }
     }
-    return true;
+    return flag;
   }
 }
 module.exports = SkylabArray;
+
+let sc = SkylabArray();
